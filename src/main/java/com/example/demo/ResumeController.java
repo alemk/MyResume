@@ -21,7 +21,7 @@ public class ResumeController {
     }
     @RequestMapping("/addresume")
     public String resumeForm(Model model){
-        model.addAttribute("resume" new Resume());
+        model.addAttribute("resume", new Resume());
         return "addresume";
     }
     @PostMapping("/processresume")

@@ -23,17 +23,22 @@
             </thead>
             <tbody>
 
-            <div th:if="${search}!=null" th:inline="text">You searched for [[${search}]]</div>
+            <div>
 
             <tr th:each="resume :${resumes}">
-                <td th:text ="${resumes.name}">Some test text here</td>
                 <td>
-                    <a th:href ="@{/update/{id}(id=${resume.id})}">Update</a>-
-                    <a th:href ="@{/detail/{id}(id=${resume.id})}">Details</a>-
-                    <a th:href ="@{/delete/{id}(id=${resume.id})}">Delete</a>
+
+                   Name:  <span th:text ="${resume.name}"></span>&nbsp;&nbsp;<span th:text ="${resume.lastname}"></span><br/>
+                   Email:  <span th:text="${resume.email}"></span><br/>
+                   Education: <span th:text="${resume.education}"></span><br/>
+                   Achievements: <span th:text="${resume.achievements}"></span><br/>
+                   Experiance: <span th:text="${resume.experiance}"></span><br/>
+                   Skills:  <span th:text="${resume.skills}"></span><br/>
+               <p>******************************************************************************</p>
                 </td>
 
             </tr>
+            </div>
             </tbody>
         </table>
     </div>
